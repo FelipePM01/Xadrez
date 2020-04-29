@@ -11,9 +11,12 @@ public class Dama extends Peca{
 				tabuleiro.set(destino,this);
 			}
 		}
+<<<<<<< HEAD
 		else {
 			if(vetOrigem[0])
 		}
+=======
+>>>>>>> Felipe
 	}
 	private boolean validod(String destino) {//checa se ha pecas entre a dama e seu destino
 		boolean valido=true;
