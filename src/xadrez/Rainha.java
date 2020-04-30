@@ -16,6 +16,7 @@ public class Rainha extends Peca{
 				if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
+					this.posicao=destino;
 				}
 			}
 	
@@ -26,6 +27,7 @@ public class Rainha extends Peca{
 					if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
+						this.posicao=destino;
 					}
 				}
 				else if(vetOrigem[1]==vetDestino[1]){
@@ -34,6 +36,7 @@ public class Rainha extends Peca{
 					if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
+						this.posicao=destino;
 					}
 					
 				}

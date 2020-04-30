@@ -17,6 +17,7 @@ void mover(String destino) {
 				if(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))) {
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
+					this.posicao=destino;
 				}
 			}
 	
@@ -27,6 +28,7 @@ void mover(String destino) {
 					if(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
+						this.posicao=destino;
 					}
 				}
 				else if(vetOrigem[1]==vetDestino[1]){
@@ -35,6 +37,7 @@ void mover(String destino) {
 					if(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
+						this.posicao=destino;
 					}
 					
 				}

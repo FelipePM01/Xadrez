@@ -16,6 +16,7 @@ void mover(String destino) {
 				if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
+					this.posicao=destino;
 				}
 			}
 	
