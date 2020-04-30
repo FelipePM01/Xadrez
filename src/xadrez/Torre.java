@@ -13,14 +13,15 @@ public class Torre extends Peca{
 		
 			if(vetOrigem[0]==vetDestino[0]) {
 				boolean valido=validoh(destino);
-				if(valido) {
+				Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);
+				if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
-				}
-			}
+				}			}
 			else if(vetOrigem[1]==vetDestino[1]){
 				boolean valido=validov(destino);
-				if(valido) {
+				Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);
+				if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
 				}

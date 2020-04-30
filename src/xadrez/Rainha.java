@@ -12,7 +12,8 @@ public class Rainha extends Peca{
 		if(vetDestino!=vetOrigem) {
 			if(Math.abs(vetOrigem[0]-vetDestino[0])==Math.abs(vetOrigem[1]-vetDestino[1])) {
 				boolean valido=validod(destino);
-				if(valido) {
+				Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);
+				if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
 				}
@@ -21,14 +22,16 @@ public class Rainha extends Peca{
 			else {
 				if(vetOrigem[0]==vetDestino[0]) {
 					boolean valido=validoh(destino);
-					if(valido) {
+					Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);
+					if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
 					}
 				}
 				else if(vetOrigem[1]==vetDestino[1]){
 					boolean valido=validov(destino);
-					if(valido) {
+					Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);
+					if(valido&&(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo)))) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
 					}

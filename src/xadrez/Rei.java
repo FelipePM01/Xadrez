@@ -5,4 +5,5 @@ public class Rei extends Peca{
     Rei(char tipo, String posicao,TabuleiroXadrez tabuleiro){
         super(tipo, posicao,tabuleiro);
     }
+    
 }
