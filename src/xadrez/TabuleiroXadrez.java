@@ -12,30 +12,33 @@ public class TabuleiroXadrez {
         for(y = 0; y<8; y++){
             for(x = 0; x<8;x++){
                 if(y==0 && (x==0 || x==7)){
-                    tab[y][x] = new Torre('T', convertVet(x,y));
-                    tab[y+7][x] = new Torre('t', convertVet(x,(y+7))); 
+                    tab[y][x] = new Torre('T', convertVet(x,y),this);
+                    tab[y+7][x] = new Torre('t', convertVet(x,(y+7)),this); 
                 }
                 if(y==0 && (x==1 || x==6)){
-                    tab[y][x] = new Cavalo('H', convertVet(x, y));
-                    tab[y+7][x] = new Cavalo('h', convertVet(x,(y+7))); 
+                    tab[y][x] = new Cavalo('H', convertVet(x, y),this);
+                    tab[y+7][x] = new Cavalo('h', convertVet(x,(y+7)),this); 
                 }
                 if(y==0 && (x==2 || x==5)){
-                    tab[y][x] = new Bispo('B', convertVet(x, y));
-                    tab[y+7][x] = new Bispo('b', convertVet(x,(y+7))); 
+                    tab[y][x] = new Bispo('B', convertVet(x, y),this);
+                    tab[y+7][x] = new Bispo('b', convertVet(x,(y+7)),this); 
                 }
                 if(y==0 && x==3){
-                    tab[y][x] = new Rei('K', convertVet(x, y));
-                    tab[y+7][x] = new Rainha('q', convertVet(x, (y+7))); 
+                    tab[y][x] = new Rei('K', convertVet(x, y),this);
+                    tab[y+7][x] = new Rainha('q', convertVet(x, (y+7)),this); 
                 }
                 if(y==0 && x==4){
-                    tab[y][x] = new Rainha('Q', convertVet(x, y));
-                    tab[y+7][x] = new Rei('k', convertVet(x, (y+7))); 
+                    tab[y][x] = new Rainha('Q', convertVet(x, y),this);
+                    tab[y+7][x] = new Rei('k', convertVet(x, (y+7)),this); 
                 }
                 else if(y==1){
-                    tab[y][x] = new Peao('P', convertVet(x, y)); 
+                    tab[y][x] = new Peao('P', convertVet(x, y),this); 
                 } 
                 else if(y==6){
-                    tab[y][x] = new Peao('p', convertVet(x, y)); 
+                    tab[y][x] = new Peao('p', convertVet(x, y),this); 
+                }
+                else {
+                	tab[y][x]=null;
                 }
             }
         }
@@ -62,7 +65,7 @@ public class TabuleiroXadrez {
 		return vet;
 	}
     public void imprimir(){
-        //Percorre a matriz imprimindo as peças
+        //Percorre a matriz imprimindo as pecas
         int x, y;
         for(y = 0; y<8;y++){
             System.out.print((8-y) + "  ");
@@ -78,9 +81,12 @@ public class TabuleiroXadrez {
     }
 	public void mover(String origem,String destino) {
 		int[] vet=convertString(origem);
-		Peca obj=tab[vet[0]][vet[1]];
-		if (vet[0])
-		if(obj)
+		
+		if (vet[0]<8&&vet[0]>0&&vet[1]<8&&vet[1]>0) {
+			Peca obj=tab[vet[0]][vet[1]];
+			if(obj!=null)obj.mover(destino);
+		}
+		
 	}
 	void set(String pos,Peca obj) {
 		int[] vet=convertString(pos);
