@@ -1,11 +1,12 @@
 package xadrez;
 
 public class Peao extends Peca{
-    //Construtor para Peão
-    Peao(char tipo, String posicao,TabuleiroXadrez tabuleiro){
+    //Construtor para Peão caso normal
+    Peao(char tipo, String posicao, TabuleiroXadrez tabuleiro){
         super(tipo, posicao,tabuleiro);
     }
 
+    
     void mover(String destino){
         int[] vetOrigem=tabuleiro.convertString(posicao);
         int[] vetDestino=tabuleiro.convertString(destino);
@@ -16,19 +17,19 @@ public class Peao extends Peca{
             if(obj==null&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
                 tabuleiro.set(posicao,null);
                 tabuleiro.set(destino,this);
-                //Atualiza posição interna da peça?
+                this.posicao = destino;
             }
             //Caso incial que é possivel avanças duas casas
             else if((obj==null&&vetOrigem[0]==1||vetOrigem[0]==6)&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==2){
                 tabuleiro.set(posicao,null);
                 tabuleiro.set(destino,this);
-                //Atualiza posição interna da peça?
+                this.posicao = destino;
             }
             //Caso para capturar uma peça
             else if((Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))&&Math.abs(vetOrigem[1]-vetDestino[1])==1&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
                 tabuleiro.set(posicao,null);
                 tabuleiro.set(destino,this);
-                //Atualiza posição interna da peça?
+                this.posicao = destino;
             }
             //Caso especial: Captura Ampassã
             //verificar se é necessario(não é prioridade no momento)
@@ -36,7 +37,7 @@ public class Peao extends Peca{
             //Caso para tranformar peão em outra peça
             if((Character.isLowerCase(this.tipo)&&vetDestino[0]==0)||(Character.isUpperCase(this.tipo)&&vetDestino[0]==7)){
                 //precisa pegar o caracter correspondente a peça q vai se tranformar de alguma maneira
-                char transforma = 'b';  //So teste
+                char transforma = tabuleiro.getTranformacao();
                 if(transforma=='Q'||transforma=='q'){
                     Peca substituta = new Rainha(transforma, destino,tabuleiro);
                     tabuleiro.set(posicao,null);

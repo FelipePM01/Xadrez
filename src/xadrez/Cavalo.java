@@ -15,7 +15,7 @@ public class Cavalo extends Peca{
             if(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))){
                 tabuleiro.set(posicao,null);
                 tabuleiro.set(destino,this);
-                //Atualiza posição interna da peça?
+                this.posicao = destino;
             }
             else
                 System.out.println("Movimento Invalido");

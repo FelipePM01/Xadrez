@@ -15,7 +15,7 @@ public class Peca {
     }
 	void mover(String destino) {
 		;
-	}
+    }
 	
 }
 
