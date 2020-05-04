@@ -16,12 +16,14 @@ public class App {
         //Laço para executar os camandos recebidos pela arquivo csv
         for(int i=0; i<commands.length; i++){
                 //Realiza o movimento, partindo da peça de coordenada inicial
-                tab.mover(commands[i]);
-                //Imprime a posição inicial e final do movimento
-                System.out.println("Source: " + commands[i].comando[0].substring(0, 2));
-                System.out.println("Target: "+ commands[i].comando[0].substring(3, 5));
-                //Imprime o tabuleiro
-                tab.imprimir();
+               if(commands[i]!=null) {
+            	   tab.mover(commands[i]);
+	                //Imprime a posição inicial e final do movimento
+	                System.out.println("Source: " + commands[i].comando[0].substring(0, 2));
+	                System.out.println("Target: "+ commands[i].comando[0].substring(3, 5));
+	                //Imprime o tabuleiro
+	                tab.imprimir();
+               }
         }
     }
 }

@@ -5,7 +5,7 @@ public class CSVReader2 extends CSVReader{
 		
 		Comando[] commands1= new Comando[commands.length];
 		for(int i=0;i<commands.length;i++) {
-			if(i==commands.length-1||commands[i+1].length()==1) {
+			if(i==commands.length-1||commands[i+1].length()!=1) {
 				commands1[i]=new Comando_movimento(commands[i]);
 			}
 			else {
