@@ -86,7 +86,7 @@ public class TabuleiroXadrez {
             Peca obj=tab[vet[0]][vet[1]];
             //Peao chega a expremidade oposta do tabuleiro
             if(obj instanceof Peao && (destino.charAt(1)=='1'||destino.charAt(1)=='8')){
-                char novaPeca = coordenadas.comando[0].charAt(0);
+                char novaPeca = coordenadas.comando[1].charAt(0);
                 obj.mover(destino, novaPeca);
             }
             else if(obj!=null)obj.mover(destino);

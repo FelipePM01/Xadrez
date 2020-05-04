@@ -20,47 +20,22 @@ public class Peao extends Peca{
                 this.posicao = destino;
             }
             //Caso incial que é possivel avanças duas casas
-            else if((obj==null&&vetOrigem[0]==1||vetOrigem[0]==6)&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==2){
+            else if((obj==null&&vetOrigem[0]==1||vetOrigem[0]==6)&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==2&&tabuleiro.getPeca((vetOrigem[0]+vetDestino[0])/2, vetOrigem[1])==null){
                 tabuleiro.set(posicao,null);
                 tabuleiro.set(destino,this);
                 this.posicao = destino;
             }
             //Caso para capturar uma peça
-            else if((Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))&&Math.abs(vetOrigem[1]-vetDestino[1])==1&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
+            else if(obj!=null&&(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))&&Math.abs(vetOrigem[1]-vetDestino[1])==1&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
                 tabuleiro.set(posicao,null);
                 tabuleiro.set(destino,this);
                 this.posicao = destino;
             }
             //Caso especial: Captura Ampassã
             //verificar se é necessario(não é prioridade no momento)
-
-            /*
-            Como nao recebe uma novaPeca assume que so vai realizar o movimento
-            Caso para tranformar peão em outra peça
-            if((Character.isLowerCase(this.tipo)&&vetDestino[0]==0)||(Character.isUpperCase(this.tipo)&&vetDestino[0]==7)){
-                //precisa pegar o caracter correspondente a peça q vai se tranformar de alguma maneira
-                char novaPeca = tabuleiro.getTranformacao();
-                if(novaPeca=='Q'||novaPeca=='q'){
-                    Peca substituta = new Rainha(novaPeca, destino,tabuleiro);
-                    tabuleiro.set(posicao,null);
-                    tabuleiro.set(destino, substituta);
-                }
-                else if(novaPeca=='T'||novaPeca=='t'){
-                    Peca substituta = new Torre(novaPeca, destino,tabuleiro);
-                    tabuleiro.set(posicao,null);
-                    tabuleiro.set(destino, substituta);
-                }
-                else if(novaPeca=='B'||novaPeca=='b'){
-                    Peca substituta = new Bispo(novaPeca, destino,tabuleiro);
-                    tabuleiro.set(posicao,null);
-                    tabuleiro.set(destino, substituta);
-                }
-                else if(novaPeca=='H'||novaPeca=='h'){
-                    Peca substituta = new Cavalo(novaPeca, destino, tabuleiro);
-                    tabuleiro.set(posicao,null);
-                    tabuleiro.set(destino, substituta);
-                }
-            }*/
+            //Caso o movimento não obedeça as regras
+            else
+                System.out.println("Movimento Invalido");
 
         }
         else
@@ -117,8 +92,9 @@ public class Peao extends Peca{
                     tabuleiro.set(posicao,null);
                     tabuleiro.set(destino, substituta);
                 }
+                else 
+                    System.out.println("Movimento Invalido");
             }
-
         }
         else
             System.out.println("Movimento Invalido");

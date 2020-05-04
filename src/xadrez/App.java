@@ -10,7 +10,7 @@ public class App {
 
         //Lê comandos e os tranforma em um vetor
         CSVReader2 csv = new CSVReader2();
-        csv.setDataSource("/home/cristiano/Documents/x1.csv");
+        csv.setDataSource("/home/cristiano/Documents/x2.csv");
         Comando commands[] = csv.pegarCommands();
 
         //Laço para executar os camandos recebidos pela arquivo csv
