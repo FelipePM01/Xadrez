@@ -2,7 +2,7 @@ package xadrez;
 
 public class Peca {
 	protected TabuleiroXadrez tabuleiro;
-	Peca(char tipo, String posicao,TabuleiroXadrez tabuleiro){
+	Peca(char tipo, String posicao, TabuleiroXadrez tabuleiro){
         this.tipo = tipo;
         this.posicao = posicao;
         this.tabuleiro=tabuleiro;
@@ -14,6 +14,9 @@ public class Peca {
         return tipo;
     }
 	void mover(String destino) {
+		;
+    }
+    void mover(String destino, char novaPeca) {
 		;
     }
 	

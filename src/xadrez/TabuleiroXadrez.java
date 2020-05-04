@@ -3,7 +3,6 @@ package xadrez;
 public class TabuleiroXadrez {
 	//Cria uma matriz de paças
     private Peca[][] tab;
-    static int i = 0;
     //Construtor para tabuleiro
     TabuleiroXadrez(){
         //Define tamanho do tabuleiro
@@ -25,21 +24,18 @@ public class TabuleiroXadrez {
                     tab[y+7][x] = new Bispo('b', convertVet(x,(y+7)),this); 
                 }
                 if(y==0 && x==3){
-                    tab[y][x] = new Rei('K', convertVet(x, y),this);
+                    tab[y][x] = new Rei('Q', convertVet(x, y),this);
                     tab[y+7][x] = new Rainha('q', convertVet(x, (y+7)),this); 
                 }
                 if(y==0 && x==4){
-                    tab[y][x] = new Rainha('Q', convertVet(x, y),this);
+                    tab[y][x] = new Rainha('K', convertVet(x, y),this);
                     tab[y+7][x] = new Rei('k', convertVet(x, (y+7)),this); 
                 }
-                else if(y==1){
+                if(y==1){
                     tab[y][x] = new Peao('P', convertVet(x, y),this); 
                 } 
-                else if(y==6){
+                if(y==6){
                     tab[y][x] = new Peao('p', convertVet(x, y),this); 
-                }
-                else {
-                	tab[y][x]=null;
                 }
             }
         }
@@ -77,15 +73,23 @@ public class TabuleiroXadrez {
                     System.out.print('-' + "  ");
             }
             System.out.println("\n");
-        System.out.println("   a  b  c  d  e  f  g  h");
-        }
+       }
+         System.out.println("   a  b  c  d  e  f  g  h");
     }
-	public void mover(String origem,String destino) {
-		int[] vet=convertString(origem);
-		
-		if (vet[0]<8&&vet[0]>0&&vet[1]<8&&vet[1]>0) {
-			Peca obj=tab[vet[0]][vet[1]];
-			if(obj!=null)obj.mover(destino);
+	//public void mover(String origem,String destino) {
+	public void mover(Comando coordenadas) {
+        String origem = coordenadas.comando[0].substring(0, 2);
+        String destino = coordenadas.comando[0].substring(3, 5);
+        int[] vet=convertString(origem);
+
+		if (vet[0]<8&&vet[0]>=0&&vet[1]<8&&vet[1]>=0) {
+            Peca obj=tab[vet[0]][vet[1]];
+            //Peao chega a expremidade oposta do tabuleiro
+            if(obj instanceof Peao && (destino.charAt(1)=='1'||destino.charAt(1)=='8')){
+                char novaPeca = coordenadas.comando[0].charAt(0);
+                obj.mover(destino, novaPeca);
+            }
+            else if(obj!=null)obj.mover(destino);
 		}
 		
 	}
@@ -93,15 +97,5 @@ public class TabuleiroXadrez {
 		int[] vet=convertString(pos);
 		tab[vet[0]][vet[1]]=obj;
 	}
-    //Função para retornar a transformação que deve ser feita
-    public char getTranformacao(){
-        //Roda o vetor ate encontrar algum comanda para tranformação
-        while(i<commands.length){
-            i++;
-            if (commands[i-1] instanceof Comando_transformacao) {
-                return commands[i-1];
-            }
-        }
-    }
 }
 
