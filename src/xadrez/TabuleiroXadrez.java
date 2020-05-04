@@ -44,7 +44,6 @@ public class TabuleiroXadrez {
     public Peca getPeca(int x, int y){
         return tab[x][y];
     }
-	//Olha o polimorfismo aí
 	public String convertVet(int x, int y){
         String pos=""+((char)('a'+ x))+((char)((7-y)+'1'));
 		return pos;
@@ -54,7 +53,6 @@ public class TabuleiroXadrez {
 		String pos=""+((char)('a'+vet[1]))+((char)((7-vet[0])+'1'));
 		return pos;
 	}
-
 	int[] convertString(String pos) {
 		int a=7-(int)(pos.charAt(1)-'1');
 		int b=(int)(pos.charAt(0)-'a');
@@ -91,7 +89,6 @@ public class TabuleiroXadrez {
             }
             else if(obj!=null)obj.mover(destino);
 		}
-		
 	}
 	void set(String pos,Peca obj) {
 		int[] vet=convertString(pos);
