@@ -1,4 +1,5 @@
 package xadrez;
+//teste 29/04
 
 public class Rei extends Peca{
     //Construtor para Rei

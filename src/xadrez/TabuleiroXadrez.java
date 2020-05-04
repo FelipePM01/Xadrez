@@ -3,6 +3,7 @@ package xadrez;
 public class TabuleiroXadrez {
 	//Cria uma matriz de paças
     private Peca[][] tab;
+    static int i = 0;
     //Construtor para tabuleiro
     TabuleiroXadrez(){
         //Define tamanho do tabuleiro
@@ -92,6 +93,15 @@ public class TabuleiroXadrez {
 		int[] vet=convertString(pos);
 		tab[vet[0]][vet[1]]=obj;
 	}
-	//Metodo para imprimir o tabuleiro
+    //Função para retornar a transformação que deve ser feita
+    public char getTranformacao(){
+        //Roda o vetor ate encontrar algum comanda para tranformação
+        while(i<commands.length){
+            i++;
+            if (commands[i-1] instanceof Comando_transformacao) {
+                return commands[i-1];
+            }
+        }
+    }
 }
 
