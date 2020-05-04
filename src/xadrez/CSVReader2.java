@@ -9,7 +9,7 @@ public class CSVReader2 extends CSVReader{
 				commands1[i]=new Comando_movimento(commands[i]);
 			}
 			else {
-				commands1[i]=new Comando_transformacao(commands[i]+","+commands[i+1]);
+				commands1[i]=new Comando_transformacao(commands[i],commands[i+1]);
 				i++;
 			}
 		}
