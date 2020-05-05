@@ -81,29 +81,25 @@ public class Peao extends Peca{
 	                    Peca substituta = new Rainha(novaPeca, destino,tabuleiro);
 	                    tabuleiro.set(posicao,null);
 						tabuleiro.set(destino, substituta);
-						if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
-						else tabuleiro.turno="brancas";
+						
 	                }
 	                else if(novaPeca=='T'||novaPeca=='t'){
 	                    Peca substituta = new Torre(novaPeca, destino,tabuleiro);
 	                    tabuleiro.set(posicao,null);
 						tabuleiro.set(destino, substituta);
-						if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
-						else tabuleiro.turno="brancas";
+						
 	                }
 	                else if(novaPeca=='B'||novaPeca=='b'){
 	                    Peca substituta = new Bispo(novaPeca, destino,tabuleiro);
 	                    tabuleiro.set(posicao,null);
 						tabuleiro.set(destino, substituta);
-						if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
-						else tabuleiro.turno="brancas";
+						
 	                }
 	                else if(novaPeca=='H'||novaPeca=='h'){
 	                    Peca substituta = new Cavalo(novaPeca, destino, tabuleiro);
 	                    tabuleiro.set(posicao,null);
 						tabuleiro.set(destino, substituta);
-						if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
-						else tabuleiro.turno="brancas";
+						
 	                }
 	            }
 	        }
