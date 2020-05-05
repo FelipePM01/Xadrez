@@ -48,9 +48,11 @@ public class Peao extends Peca{
         //Verifica se o destino recebido respeita a propriedade de somente avancar dos peoes
 	        if((Character.isLowerCase(this.tipo)&&vetDestino[0]<vetOrigem[0])||(Character.isUpperCase(this.tipo)&&vetDestino[0]>vetOrigem[0])){
 	            Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);
-	            //Caso geral para avançar uma unica casa
+				//Caso geral para avançar uma unica casa
 	            if(obj==null&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
-	                tabuleiro.set(posicao,null);
+					System.out.println("Source: " + posicao);
+					System.out.println("Target: "+ destino);
+					tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 					this.posicao = destino;
 					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
@@ -58,7 +60,9 @@ public class Peao extends Peca{
 	            }
 	            //Caso incial que e possivel avanças duas casas
 	            else if((obj==null&&vetOrigem[0]==1||vetOrigem[0]==6)&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==2){
-	                tabuleiro.set(posicao,null);
+					System.out.println("Source: " + posicao);
+					System.out.println("Target: "+ destino);
+					tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 					this.posicao = destino;
 					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
@@ -66,14 +70,16 @@ public class Peao extends Peca{
 	            }
 	            //Caso para capturar uma peca
 	            else if((Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))&&Math.abs(vetOrigem[1]-vetDestino[1])==1&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
-	                tabuleiro.set(posicao,null);
+					System.out.println("Source: " + posicao);
+					System.out.println("Target: "+ destino);
+					tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 					this.posicao = destino;
 					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
 						else tabuleiro.turno="brancas";
 	            }
-				//Imprime tabuleiro antes da tranformação
 				tabuleiro.imprimir();
+				
 	            //Caso para tranformar peao em outra peça
 	            if((Character.isLowerCase(this.tipo)&&vetDestino[0]==0)||(Character.isUpperCase(this.tipo)&&vetDestino[0]==7)){
 	                //precisa pegar o caracter correspondente a peca q vai se tranformar de alguma maneira
