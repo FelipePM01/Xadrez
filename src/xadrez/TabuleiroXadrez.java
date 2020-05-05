@@ -24,11 +24,11 @@ public class TabuleiroXadrez {
                     tab[y+7][x] = new Bispo('b', convertVet(x,(y+7)),this); 
                 }
                 if(y==0 && x==3){
-                    tab[y][x] = new Rei('Q', convertVet(x, y),this);
+                    tab[y][x] = new Rainha('Q', convertVet(x, y),this);
                     tab[y+7][x] = new Rainha('q', convertVet(x, (y+7)),this); 
                 }
                 if(y==0 && x==4){
-                    tab[y][x] = new Rainha('K', convertVet(x, y),this);
+                    tab[y][x] = new Rei('K', convertVet(x, y),this);
                     tab[y+7][x] = new Rei('k', convertVet(x, (y+7)),this); 
                 }
                 if(y==1){

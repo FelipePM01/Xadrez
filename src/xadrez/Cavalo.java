@@ -17,10 +17,6 @@ public class Cavalo extends Peca{
                 tabuleiro.set(destino,this);
                 this.posicao = destino;
             }
-            else
-                System.out.println("Movimento Invalido");
         }
-        else
-            System.out.println("Movimento Invalido");
     }
 }

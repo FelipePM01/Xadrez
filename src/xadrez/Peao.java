@@ -31,15 +31,7 @@ public class Peao extends Peca{
                 tabuleiro.set(destino,this);
                 this.posicao = destino;
             }
-            //Caso especial: Captura Ampassa
-            //verificar se e necessario(não e prioridade no momento)
-            //Caso o movimento nao obedeça as regras
-            else
-                System.out.println("Movimento Invalido");
-
         }
-        else
-            System.out.println("Movimento Invalido");
     }
 
     void mover(String destino, char novaPeca){
@@ -67,9 +59,6 @@ public class Peao extends Peca{
                 this.posicao = destino;
             }
 
-            //Caso especial: Captura Ampassa
-            //verificar se e necessario(nao e prioridade no momento)
-
             //Caso para tranformar peao em outra peça
             if((Character.isLowerCase(this.tipo)&&vetDestino[0]==0)||(Character.isUpperCase(this.tipo)&&vetDestino[0]==7)){
                 //precisa pegar o caracter correspondente a peca q vai se tranformar de alguma maneira
@@ -93,11 +82,7 @@ public class Peao extends Peca{
                     tabuleiro.set(posicao,null);
                     tabuleiro.set(destino, substituta);
                 }
-                else 
-                    System.out.println("Movimento Invalido");
             }
         }
-        else
-            System.out.println("Movimento Invalido");
     }
 }
