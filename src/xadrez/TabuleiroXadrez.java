@@ -90,7 +90,7 @@ public class TabuleiroXadrez {
                 obj.mover(destino, novaPeca);
             }
             else if(obj!=null)obj.mover(destino);
-		}
+        }
 	}
 	void set(String pos,Peca obj) {
 		int[] vet=convertString(pos);

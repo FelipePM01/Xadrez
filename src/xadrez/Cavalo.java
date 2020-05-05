@@ -16,12 +16,11 @@ public class Cavalo extends Peca{
 	            if(obj==null||(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))){
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
-	                this.posicao = destino;
-	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
-					else tabuleiro.turno="brancas";
+                    this.posicao = destino;
+                    if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+						else tabuleiro.turno="brancas";
 	            }
 	        }
-	    }
+        }
     } 
-        
 }
