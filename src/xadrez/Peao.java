@@ -19,18 +19,24 @@ public class Peao extends Peca{
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	            //Caso incial que e possivel avanças duas casas
 	            else if((obj==null&&vetOrigem[0]==1||vetOrigem[0]==6)&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==2&&tabuleiro.getPeca((vetOrigem[0]+vetDestino[0])/2, vetOrigem[1])==null){
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	            //Caso para capturar uma peça
 	            else if(obj!=null&&(Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))&&Math.abs(vetOrigem[1]-vetDestino[1])==1&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	            //Caso especial: Captura Ampassa
 	            //verificar se e necessario(não e prioridade no momento)
@@ -56,18 +62,24 @@ public class Peao extends Peca{
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	            //Caso incial que e possivel avanças duas casas
 	            else if((obj==null&&vetOrigem[0]==1||vetOrigem[0]==6)&&vetOrigem[1]==vetDestino[1]&&Math.abs(vetOrigem[0]-vetDestino[0])==2){
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	            //Caso para capturar uma peca
 	            else if((Character.isLowerCase(obj.tipo)!=Character.isLowerCase(this.tipo))&&Math.abs(vetOrigem[1]-vetDestino[1])==1&&Math.abs(vetOrigem[0]-vetDestino[0])==1){
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	
 	            //Caso especial: Captura Ampassa
@@ -80,21 +92,29 @@ public class Peao extends Peca{
 	                    Peca substituta = new Rainha(novaPeca, destino,tabuleiro);
 	                    tabuleiro.set(posicao,null);
 	                    tabuleiro.set(destino, substituta);
+	                    if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+						else tabuleiro.turno="brancas";
 	                }
 	                else if(novaPeca=='T'||novaPeca=='t'){
 	                    Peca substituta = new Torre(novaPeca, destino,tabuleiro);
 	                    tabuleiro.set(posicao,null);
 	                    tabuleiro.set(destino, substituta);
+	                    if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+						else tabuleiro.turno="brancas";
 	                }
 	                else if(novaPeca=='B'||novaPeca=='b'){
 	                    Peca substituta = new Bispo(novaPeca, destino,tabuleiro);
 	                    tabuleiro.set(posicao,null);
 	                    tabuleiro.set(destino, substituta);
+	                    if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+						else tabuleiro.turno="brancas";
 	                }
 	                else if(novaPeca=='H'||novaPeca=='h'){
 	                    Peca substituta = new Cavalo(novaPeca, destino, tabuleiro);
 	                    tabuleiro.set(posicao,null);
 	                    tabuleiro.set(destino, substituta);
+	                    if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+						else tabuleiro.turno="brancas";
 	                }
 	                else 
 	                    System.out.println("Movimento Invalido");

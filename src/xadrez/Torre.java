@@ -18,6 +18,8 @@ public class Torre extends Peca{
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
 					this.posicao=destino;
+					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 				}			
 			}
 			else if(vetOrigem[1]==vetDestino[1]){
@@ -27,6 +29,8 @@ public class Torre extends Peca{
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
 					this.posicao=destino;
+					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 				}
 				
 			}

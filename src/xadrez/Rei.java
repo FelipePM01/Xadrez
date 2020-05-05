@@ -1,5 +1,5 @@
 package xadrez;
-//teste 29/04
+
 
 public class Rei extends Peca{
     //Construtor para Rei
@@ -19,6 +19,8 @@ void mover(String destino) {
 						tabuleiro.set(posicao,null);
 						tabuleiro.set(destino,this);
 						this.posicao=destino;
+						if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+						else tabuleiro.turno="brancas";
 					}
 				}
 		
@@ -30,6 +32,8 @@ void mover(String destino) {
 							tabuleiro.set(posicao,null);
 							tabuleiro.set(destino,this);
 							this.posicao=destino;
+							if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+							else tabuleiro.turno="brancas";
 						}
 					}
 					else if(vetOrigem[1]==vetDestino[1]){
@@ -39,6 +43,8 @@ void mover(String destino) {
 							tabuleiro.set(posicao,null);
 							tabuleiro.set(destino,this);
 							this.posicao=destino;
+							if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+							else tabuleiro.turno="brancas";
 						}
 						
 					}

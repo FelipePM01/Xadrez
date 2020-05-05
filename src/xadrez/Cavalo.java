@@ -17,6 +17,8 @@ public class Cavalo extends Peca{
 	                tabuleiro.set(posicao,null);
 	                tabuleiro.set(destino,this);
 	                this.posicao = destino;
+	                if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 	            }
 	            else
 	                System.out.println("Movimento Invalido");
