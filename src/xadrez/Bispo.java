@@ -9,7 +9,7 @@ void mover(String destino) {
     	
 		int[] vetOrigem=tabuleiro.convertString(posicao);
 		int[] vetDestino=tabuleiro.convertString(destino);
-		if(vetDestino!=vetOrigem) {
+		if(vetDestino!=vetOrigem&&((tabuleiro.turno=="brancas"&&Character.isLowerCase(this.tipo))||(tabuleiro.turno=="pretas"&&Character.isUpperCase(this.tipo)))) {
 			if(Math.abs(vetOrigem[0]-vetDestino[0])==Math.abs(vetOrigem[1]-vetDestino[1])) {
 				boolean valido=validod(destino);
 				Peca obj=tabuleiro.getPeca(vetDestino[0],vetDestino[1]);

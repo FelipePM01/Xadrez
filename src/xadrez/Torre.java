@@ -9,7 +9,7 @@ public class Torre extends Peca{
     	
 		int[] vetOrigem=tabuleiro.convertString(posicao);
 		int[] vetDestino=tabuleiro.convertString(destino);
-		if(vetDestino!=vetOrigem) {
+		if(vetDestino!=vetOrigem&&((tabuleiro.turno=="brancas"&&Character.isLowerCase(this.tipo))||(tabuleiro.turno=="pretas"&&Character.isUpperCase(this.tipo)))) {
 		
 			if(vetOrigem[0]==vetDestino[0]) {
 				boolean valido=validoh(destino);
