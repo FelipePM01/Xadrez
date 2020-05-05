@@ -9,7 +9,7 @@ public class Torre extends Peca{
     	
 		int[] vetOrigem=tabuleiro.convertString(posicao);
 		int[] vetDestino=tabuleiro.convertString(destino);
-		if(vetDestino!=vetOrigem) {
+		if(vetDestino!=vetOrigem&&((tabuleiro.turno=="brancas"&&Character.isLowerCase(this.tipo))||(tabuleiro.turno=="pretas"&&Character.isUpperCase(this.tipo)))) {
 		
 			if(vetOrigem[0]==vetDestino[0]) {
 				boolean valido=validoh(destino);
@@ -18,6 +18,8 @@ public class Torre extends Peca{
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
 					this.posicao=destino;
+					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 				}			
 			}
 			else if(vetOrigem[1]==vetDestino[1]){
@@ -27,6 +29,8 @@ public class Torre extends Peca{
 					tabuleiro.set(posicao,null);
 					tabuleiro.set(destino,this);
 					this.posicao=destino;
+					if(tabuleiro.turno=="brancas")tabuleiro.turno="pretas";
+					else tabuleiro.turno="brancas";
 				}
 				
 			}

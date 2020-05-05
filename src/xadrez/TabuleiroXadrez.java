@@ -3,7 +3,9 @@ package xadrez;
 public class TabuleiroXadrez {
 	//Cria uma matriz de paças
     private Peca[][] tab;
+    String turno="brancas";
     //Construtor para tabuleiro
+    
     TabuleiroXadrez(){
         //Define tamanho do tabuleiro
         tab = new Peca[8][8];
